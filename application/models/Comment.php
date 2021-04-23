@@ -12,7 +12,7 @@
         Owner: Cesar Francisco
         */
         public function get_all_comments() {
-            $query = "SELECT *, comments.created_at FROM comments LEFT JOIN messages ON comments.message_id = messages.id LEFT JOIN users ON comments.user_id = users.id";
+            $query = "SELECT *, comments.created_at FROM comments LEFT JOIN messages ON comments.message_id = messages.id LEFT JOIN users ON comments.user_id = users.id ORDER BY comments.created_at ASC";
             return $this->db->query($query)->result_array();
         }
     }

@@ -10,7 +10,7 @@
         Owner: Cesar Francisco
         */
         public function get_all_messages() {
-            $query = "SELECT *, messages.id, messages.created_at FROM messages LEFT JOIN users ON messages.user_id = users.id";
+            $query = "SELECT *, messages.id, messages.created_at FROM messages LEFT JOIN users ON messages.user_id = users.id  ORDER BY messages.created_at DESC";
             return $this->db->query($query)->result_array();
         }
         /*	DOCU: This function is responsible for adding a message to a any posted comments from messages table from the database
